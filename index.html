@@ -2,161 +2,99 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Carta Inolvidable</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<title>Carta Elegante</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
 body{
     margin:0;
     padding:0;
+    background: linear-gradient(180deg, #1a0f1f, #0d0a12);
     font-family:'Montserrat',sans-serif;
-    background: radial-gradient(circle at top, #2a0033, #000 70%);
-    overflow-x:hidden;
-}
-
-/* PARTÍCULAS DE FONDO */
-body::before{
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    background: url('https://i.imgur.com/8QfQYJv.png');
-    opacity:0.07;
-    animation:moveBg 60s linear infinite;
-    z-index:-1;
-}
-
-@keyframes moveBg{
-    from{background-position:0 0;}
-    to{background-position:1000px 1000px;}
-}
-
-/* CONTENEDOR GENERAL */
-.container{
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:40px 20px 80px;
 }
 
 /* IFRAME CANCIÓN */
 .music-frame{
+    margin-top:50px;
     width:90%;
-    max-width:800px;
+    max-width:750px;
     height:315px;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 0 40px rgba(255,0,200,0.4);
-    margin-bottom:60px;
-    border:2px solid rgba(255,255,255,0.2);
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* CARTA */
+/* CONTENEDOR CARTA */
 .carta{
-    width:90%;
-    max-width:900px;
-    padding:80px;
-    border-radius:30px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    backdrop-filter: blur(18px);
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:
-        0 0 60px rgba(255,0,150,0.2),
-        0 0 120px rgba(166,77,255,0.15);
+    margin:70px 0 100px;
+    width:85%;
+    max-width:850px;
+    padding:90px 80px;
+    background: #ffffff;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.5);
     position:relative;
 }
 
-/* BORDE LUMINOSO ANIMADO */
+/* DETALLE SUPERIOR */
 .carta::before{
     content:"";
     position:absolute;
-    inset:-3px;
-    border-radius:35px;
-    background: linear-gradient(45deg,#ff4da6,#a64dff,#ffd700,#ff4da6);
-    background-size:300% 300%;
-    animation:borderGlow 8s linear infinite;
-    z-index:-1;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:linear-gradient(90deg,#ff4da6,#a64dff,#ffd700);
+    border-top-left-radius:18px;
+    border-top-right-radius:18px;
 }
 
-@keyframes borderGlow{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-/* TEXTO CARTA */
+/* TEXTO */
 .texto{
-    font-family:'Cormorant Garamond', serif;
-    font-size:26px;
-    line-height:2;
-    color:white;
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    line-height:1.9;
+    color:#2b2b2b;
     text-align:justify;
-    letter-spacing:1px;
 }
 
-/* NEÓN ÚNICO */
+/* NEÓN FINO Y ELEGANTE */
 .neon-word{
+    color:#a64dff;
     font-weight:700;
-    color:#fff;
-    text-transform:uppercase;
-    letter-spacing:3px;
     text-shadow:
-        0 0 5px #fff,
-        0 0 15px #ff00cc,
-        0 0 30px #ff00cc,
-        0 0 60px #a64dff,
-        0 0 120px #a64dff;
-    animation:neonPulse 2s ease-in-out infinite alternate;
+        0 0 4px rgba(166,77,255,0.6),
+        0 0 10px rgba(166,77,255,0.4);
 }
 
-@keyframes neonPulse{
-    from{
-        text-shadow:
-        0 0 10px #fff,
-        0 0 30px #ff00cc,
-        0 0 60px #a64dff;
-    }
-    to{
-        text-shadow:
-        0 0 20px #fff,
-        0 0 60px #ff00cc,
-        0 0 120px #a64dff;
-    }
-}
-
-/* FRASES FINALES */
+/* FRASES */
 .frases{
     margin-top:70px;
     text-align:center;
 }
 
 .frase-rosada{
-    font-size:22px;
+    font-size:20px;
     color:#ff4da6;
-    text-shadow:0 0 20px rgba(255,77,166,0.9);
     margin-bottom:25px;
+    font-style:italic;
 }
 
 .frase-morado{
-    font-size:24px;
-    color:#a64dff;
-    text-shadow:0 0 25px rgba(166,77,255,1);
+    font-size:22px;
+    color:#7a2fff;
     margin-bottom:25px;
+    font-weight:600;
 }
 
 .frase-dorado{
-    font-size:24px;
-    color:#ffd700;
-    text-shadow:
-        0 0 15px rgba(255,215,0,0.9),
-        0 0 35px rgba(255,215,0,0.7);
-    animation:goldShine 3s infinite alternate;
-}
-
-@keyframes goldShine{
-    from{ text-shadow:0 0 10px rgba(255,215,0,0.6);}
-    to{ text-shadow:0 0 40px rgba(255,215,0,1);}
+    font-size:22px;
+    color:#caa400;
+    font-weight:600;
 }
 
 </style>
@@ -164,20 +102,19 @@ body::before{
 
 <body>
 
-<div class="container">
+<div class="music-frame">
+<iframe width="100%" height="100%"
+src="https://www.youtube.com/embed/owW6CzWO_h0"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+</div>
 
-    <div class="music-frame">
-        <iframe width="100%" height="100%" 
-        src="https://www.youtube.com/embed/XaWjeX34Jw4" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-        </iframe>
-    </div>
+<div class="carta">
 
-    <div class="carta">
-        <div class="texto">
-            <span class="neon-word">MI VIDA ENTERA, MI AMOR, PRECIOSA, MI NIÑA LINDA</span>
+    <div class="texto">
+<span class="neon-word">MI VIDA ENTERA, MI AMOR, PRECIOSA, MI NIÑA LINDA</span>
       <p>Esta noche de miércoles 25 de febrero de 2026, mientras el mundo sigue su ritmo silencioso y las estrellas parecen acomodarse solo para verte brillar, quiero que estas palabras te abracen como si mis brazos pudieran atravesar cualquier distancia. Quiero que sientas mi voz en cada línea, mi respiración en cada pausa, mi corazón latiendo fuerte solo por ti. <strong>Cada palabra que escribo está impregnada de mis sentimientos más profundos, de mis deseos más sinceros y de mi devoción inquebrantable hacia ti.</strong>
 
 No sé en qué momento exacto comenzaste a convertirte en mi pensamiento favorito, en mi refugio seguro, en la razón por la que sonrío sin darme cuenta. Pero sí sé que desde que llegaste a mi vida, todo tiene más color, más sentido, más intensidad. Es como si antes de ti el mundo estuviera en modo silencioso… y tú vinieras a subirle el volumen a cada emoción. <strong>Tu presencia ilumina mis días y transforma mis noches, llenando cada rincón de mi ser con una felicidad que nunca supe que existía.</strong>
@@ -277,6 +214,7 @@ Así que, mientras el reloj avanza y esta noche se convierte en un hermoso recue
       <p><strong>JUAN KALETH MENDOZA PRIMERA 💜</strong></p>
     </div>
 
+    <div class="frases">
     <div class="frase-rosada">
         "Eres la casualidad más hermosa que el destino decidió entrelazar en mi vida, como un susurro del universo que me llevó a encontrarte en el momento perfecto. Desde el instante en que nuestras miradas se cruzaron, supe que había descubierto un tesoro invaluable, un regalo que trasciende el tiempo y el espacio. Cada día a tu lado es un capítulo de una historia mágica, donde cada risa compartida y cada lágrima superada se convierten en los cimientos de un amor que florece con cada amanecer.Tu esencia ilumina mis días, convirtiendo lo ordinario en extraordinario, y en cada pequeño gesto encuentro la poesía que da vida a mi corazón. Eres mi musa, la inspiración detrás de mis sueños, y la razón por la que creo en la belleza de las sorpresas que la vida nos regala. Juntos hemos creado un mundo donde el amor es la brújula que guía nuestras almas, y cada momento a tu lado es un recordatorio de que el destino, en su infinita sabiduría, me regaló la oportunidad de amarte.Así, en este viaje que compartimos, prometo seguir escribiendo nuestra historia con la tinta de mis sentimientos más profundos, y siempre recordaré que encontrarte fue la más hermosa de las casualidades, una sinfonía que resuena en mi ser y que jamás dejaré de celebrar."
     </div>
@@ -288,9 +226,6 @@ Así que, mientras el reloj avanza y esta noche se convierte en un hermoso recue
 
     <div class="frase-dorado">
         "Te prometo que mi amor por ti será un océano profundo y vasto, que hoy, mañana y siempre, fluirá con la misma intensidad, como las olas que besan la orilla con ternura infinita. En cada amanecer, mi corazón se despierta lleno de gratitud por tenerte a mi lado, y en cada anochecer, mi alma se siente completa en tu presencia.Hoy, te amaré como si fuera el último día de nuestras vidas, con la pasión de un fuego que nunca se apaga, iluminando cada rincón de nuestras vidas compartidas. Mañana, mi devoción será aún más fuerte, como un viento suave que acaricia tu ser, recordándote que eres el centro de mi universo, la razón detrás de cada sonrisa que se dibuja en mi rostro.Siempre, mi amor será un refugio cálido donde encuentres paz y consuelo, un faro en la distancia que te guiará en los momentos de incertidumbre. Prometo ser tu compañero inquebrantable, tu apoyo constante, y celebrar cada uno de tus sueños como si fueran los míos, construyendo juntos un futuro lleno de aventuras y risas.Así, en este viaje que hemos comenzado, te prometo que nuestro amor será un lienzo vibrante, donde pintaremos con los colores de nuestras esperanzas y anhelos, creando una obra maestra que perdure más allá del tiempo, un testimonio eterno de la conexión única que compartimos."
-    </div>
-        </div>
-
     </div>
 
 </div>
